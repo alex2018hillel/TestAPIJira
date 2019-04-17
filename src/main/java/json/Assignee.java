@@ -1,4 +1,4 @@
-package json;
+/*package json;
 
 public class Assignee {
 
@@ -7,10 +7,18 @@ public class Assignee {
     public String getName() {
         return name;
     }
-
-
     public void setName(String name) {
         this.name = name;
-
     }
+}*/
+
+package json;
+
+public class Assignee implements Pojo {
+    public String name;
+
+    public Assignee(String id) {
+        this.name = id;
+    }
+
 }
