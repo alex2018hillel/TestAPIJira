@@ -13,7 +13,3 @@ public class Log4jTest {
         logger.fatal("FATAL: error that can't be fixed. Everything crashed.");
     }
 }
-
-// import org.testng.log4testng.Logger; - don't use this import, because it doesn't read configuration from log4j.properties
-
-//import org.apache.log4j.Logger;

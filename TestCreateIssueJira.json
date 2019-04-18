@@ -1,0 +1,14 @@
+{
+  "fields": {
+    "project": {
+      "id":"10000"
+    },
+    "summary": "REST ye merry gentlemen.",
+    "issuetype": {
+      "id":"10000"
+    },
+      "assignee": {
+        "name": "Bug"
+      }
+  }
+}

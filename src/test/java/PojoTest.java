@@ -13,9 +13,9 @@ public class PojoTest {
         ObjectMapper mapper = new ObjectMapper();
 
         Fields fields = new Fields();
-        fields.setAssignee("Arthur");
-        fields.setIssueType("Bug");
-        fields.setProject("QAAUT-5");
+        fields.setAssignee("Alex");
+        fields.setIssueType("Test");
+        fields.setProject("QA-7");
         fields.setSummary("Issue summary from the Automation Test");
 
         Issue issue = new Issue(fields);
@@ -24,7 +24,7 @@ public class PojoTest {
         try {
             jsonInString = mapper.writeValueAsString(issue);
             try {
-                mapper.writeValue(new File("/Users/macbook/Documents/Hillel/pojo_jackson_sample/test.json"), issue);
+                mapper.writeValue(new File("/Users/IdeaProjects/TestAPIJira/test.json"), issue);
             } catch (IOException e) {
                 e.printStackTrace();
             }

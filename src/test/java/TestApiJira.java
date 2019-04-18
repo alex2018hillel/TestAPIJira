@@ -12,17 +12,17 @@ public class TestApiJira {
     public void sampleTest() {
         ObjectMapper objectMapper = new ObjectMapper();
 
-        Assignee assignee = new Assignee();
-        assignee.setName("Alex");
-        String result = "";
+       // Assignee assigneeName = new Assignee();
+      //  assigneeName.setName("Alex");
+      //  String result = "";
 
 
-        try {
-            result = objectMapper.writeValueAsString(assignee);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-        System.out.println(result);
+     //   try {
+      //      result = objectMapper.writeValueAsString(assigneeName);
+      //  } catch (JsonProcessingException e) {
+      //      e.printStackTrace();
+       // }
+     //   System.out.println(result);
 
     }
 
