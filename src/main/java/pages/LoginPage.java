@@ -7,11 +7,6 @@ public class LoginPage {
 
     WebDriver driver;
 
-
-
-
-
-
     private By login = By.id("login-form-username");
     private By password = By.id("login-form-password");
     private By loginButton = By.id("login");

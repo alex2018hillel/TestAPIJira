@@ -30,16 +30,4 @@ public class DriverManager {
         } else
             return eventDriver; //TODO - handle error
     }
-
-
-
-
-
-//    public static WebDriverWait waiting() {
-//        WebDriverWait wait = new WebDriverWait(driver, 20);
-//
-//        return wait;
-//
-//    }
-
 }

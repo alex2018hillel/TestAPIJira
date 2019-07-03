@@ -154,33 +154,7 @@ Assert.assertTrue(driver.findElements(mainPage.logoButton()).size() != 0);
 
     String labelName = "user";
 
-/*
-@Parameters("browser")
-@BeforeTest
-public void setUpRemoveLabel(String browser) {
-driver = DriverManager.getDriver(browser);
-loginPage = new LoginPage(driver);
-issuePage = new IssuePage(driver);
-wait = DriverManager.waiting();
-for(Cookie cookie : allCookies) {
-driver.manage().addCookie(cookie);
-}
-}
 
-//TODO - fix it
-@Test(groups = {"regression"})
-public void removeLabel() {
-mainPage.navigate(baseUrl + issueID);
-Actions builder = new Actions(driver);
-Action mouseOverHome = builder.moveToElement(issuePage.labelsEditButton()).build();
-issuePage.labelsEditButtonClick();
-TODO - check it, unstable
-wait.until(ExpectedConditions.presenceOfElementLocated(issuePage.removeLabelsButton(labelName)));
-issuePage.removeLabelsButtonClick(labelName);
-
-issuePage.enterButtonPress();
-}
-*/
 
     @Parameters("browser")
     @BeforeTest
@@ -251,6 +225,4 @@ issuePage.enterButtonPress();
         wait.until(ExpectedConditions.presenceOfElementLocated(issuePage.emptyDescription()));
         Assert.assertTrue(issuePage.emptyDescriptionSize() != 0);
     }
-
-    //TODO - add test with Drag and Drop - https://pastebin.com/dYzkzEf6
 }

@@ -27,7 +27,7 @@ public class ChromeExpansionsManagement {
 
         //register ext
        driver.navigate( ).to("https://lingualeo.com/ru/profile?utm_source=ll_plugin&utm_medium=plugin&utm_campaign=logindialog");
-        driver.findElement(By.id("email")).sendKeys("nuzhin.ivan@gmail.com");
+        driver.findElement(By.id("email")).sendKeys("tropp_alex@i.ua");
         driver.findElement(By.id("password")).sendKeys("test");
         driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[3]/form/input[4]")).click( );
         Thread.sleep(5000);

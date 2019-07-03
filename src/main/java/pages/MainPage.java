@@ -7,7 +7,7 @@ public class MainPage {
     WebDriver driver;
 
     private By createIssueButton = By.id("create_link");
-    private By dropdownMenu = By.id("header-details-user-fullname");  //click to dropdown on logout
+    private By dropdownMenu = By.id("header-details-user-fullname");
     private By logout = By.id("log_out");
     private By dashboard = By.id("home_link");
     private By logoButton = By.id("logo");

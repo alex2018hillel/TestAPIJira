@@ -16,7 +16,7 @@ public class APITests {
 
     JsonBuilder jsonBuilder ;
     String cookie;
-    String issueID = "QAAUT7-740";  //have to be exists
+    String issueID = "QAAUT7-743";  //have to be exists
 
     @Test
     public void login() {
@@ -59,8 +59,8 @@ public class APITests {
                 ,"Bug");
         issueID = response.getBody().path("key");
         Assert.assertTrue(response.statusCode() == 201);
-        //curl -D- -u Nuzhin_Ivan:test -X POST --data '{"fields":{"project":{"key": "QAAUT7"},"summary": "Summary test","description": "descr","issuetype": {"name": "Bug"}}}' -H "Content-Type: application/json"  http://jira.hillel.it:8080/rest/api/2/issue/
-        //{"id":"48710","key":"QAAUT7-732","self":"http://jira.hillel.it:8080/rest/api/2/issue/48710"}
+        //curl -D- -u Alex_Tropp:test -X POST --data '{"fields":{"project":{"key": "QAAUT7"},"summary": "Summary test","description": "descr","issuetype": {"name": "Bug"}}}' -H "Content-Type: application/json"  http://jira.hillel.it:8080/rest/api/2/issue/
+        //{"id":"48710","key":"QAAUT7-743","self":"http://jira.hillel.it:8080/rest/api/2/issue/48710"}
         deleteIssue();
         }
 
@@ -69,7 +69,7 @@ public class APITests {
         JiraAPIActions jiraAPIActions = new JiraAPIActions();
         Response response = jiraAPIActions.deleteIssue(issueID);
         Assert.assertTrue(response.statusCode() == 204);
-        //curl -X DELETE -u Nuzhin_Ivan:test --header 'Accept: application/json' --url 'http://jira.hillel.it:8080/rest/api/2/issue/QAAUT7-729'
+        //curl -X DELETE -u Alex_Tropp:test --header 'Accept: application/json' --url 'http://jira.hillel.it:8080/rest/api/2/issue/QAAUT7-743'
     }
 
     @Test
@@ -83,7 +83,7 @@ public class APITests {
         Assert.assertTrue(response.statusCode() == 204);
         Assert.assertTrue(responseClearUP.statusCode() == 204);
 
-        //curl -D- -u Nuzhin_Ivan:test -X PUT --data '{ "fields": { "assignee":{"name":"Nuzhin_Ivan"} }}' -H "Content-Type: application/json" http://jira.hillel.it:8080/rest/api/2/issue/QAAUT7-732
+        //curl -D- -u Alex_Tropp:test -X PUT --data '{ "fields": { "assignee":{"name":"Alex_Tropp"} }}' -H "Content-Type: application/json" http://jira.hillel.it:8080/rest/api/2/issue/QAAUT7-743
     }
 
     @Test
@@ -94,7 +94,7 @@ public class APITests {
         //System.out.println(response.prettyPrint());
         Assert.assertTrue(response.statusCode() == 204);
 
-        //curl -D- -u Nuzhin_Ivan:test -X PUT -d '{"update": {"comment": [{"add": {"body": "Comment test"}}]}}' -H "Content-Type: application/json" http://jira.hillel.it:8080/rest/api/2/issue/QAAUT7-732
+        //curl -D- -u Alex_Tropp:test -X PUT -d '{"update": {"comment": [{"add": {"body": "Comment test"}}]}}' -H "Content-Type: application/json" http://jira.hillel.it:8080/rest/api/2/issue/QAAUT7-743
     }
 
     @Test
@@ -117,9 +117,9 @@ public class APITests {
     @Test
     public void getUser() {
 
-        //curl  -u Nuzhin_Ivan:test   --header 'Accept: application/json'   --url 'http://jira.hillel.it:8080/rest/api/2/user?username=Nuzhin_Ivan&expand=groups,applicationRoles'
+        //curl  -u Alex_Tropp:test   --header 'Accept: application/json'   --url 'http://jira.hillel.it:8080/rest/api/2/user?username=Alex_Tropp&expand=groups,applicationRoles'
 
-        //{"self":"http://jira.hillel.it:8080/rest/api/2/user?username=Nuzhin_Ivan","key":"nuzhin_ivan","name":"Nuzhin_Ivan","emailAddress":"nuzhin.ivan@gmail.com","avatarUrls":{"48x48":"https://www.gravatar.com/avatar/ee6c1b396807230ced8e053aca5e87c2?d=mm&s=48","24x24":"https://www.gravatar.com/avatar/ee6c1b396807230ced8e053aca5e87c2?d=mm&s=24","16x16":"https://www.gravatar.com/avatar/ee6c1b396807230ced8e053aca5e87c2?d=mm&s=16","32x32":"https://www.gravatar.com/avatar/ee6c1b396807230ced8e053aca5e87c2?d=mm&s=32"},"displayName":"Nuzhin_Ivan","active":true,"timeZone":"Europe/Kiev","locale":"en_US","groups":{"size":2,"items":[{"name":"jira-software-users","self":"http://jira.hillel.it:8080/rest/api/2/group?groupname=jira-software-users"},{"name":"webinar","self":"http://jira.hillel.it:8080/rest/api/2/group?groupname=webinar"}]},"applicationRoles":{"size":1,"items":[{"key":"jira-software","name":"JIRA Software"}]},"expand":"groups,applicationRoles"}
+        //{"self":"http://jira.hillel.it:8080/rest/api/2/user?username=Alex_Tropp","key":"tropp_alex","name":"Alex_Tropp","emailAddress":"tropp_alex@i.ua","avatarUrls":{"48x48":"https://www.gravatar.com/avatar/ee6c1b396807230ced8e053aca5e87c2?d=mm&s=48","24x24":"https://www.gravatar.com/avatar/ee6c1b396807230ced8e053aca5e87c2?d=mm&s=24","16x16":"https://www.gravatar.com/avatar/ee6c1b396807230ced8e053aca5e87c2?d=mm&s=16","32x32":"https://www.gravatar.com/avatar/ee6c1b396807230ced8e053aca5e87c2?d=mm&s=32"},"displayName":"Tropp_Alex","active":true,"timeZone":"Europe/Kiev","locale":"en_US","groups":{"size":2,"items":[{"name":"jira-software-users","self":"http://jira.hillel.it:8080/rest/api/2/group?groupname=jira-software-users"},{"name":"webinar","self":"http://jira.hillel.it:8080/rest/api/2/group?groupname=webinar"}]},"applicationRoles":{"size":1,"items":[{"key":"jira-software","name":"JIRA Software"}]},"expand":"groups,applicationRoles"}
 
     }
 
@@ -127,7 +127,7 @@ public class APITests {
     public void getProject() {
 
         //get ALL projects
-        //curl -u Nuzhin_Ivan:test   --header 'Accept: application/json'   --url 'http://jira.hillel.it:8080/rest/api/2/project'
+        //curl -u Alex_Tropp:test   --header 'Accept: application/json'   --url 'http://jira.hillel.it:8080/rest/api/2/project'
     }
 
     @Test

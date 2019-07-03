@@ -10,7 +10,6 @@ public class PropertyReader {
         Properties prop = new Properties();
         InputStream input = null;
         try {
-//TODO - find out how to avoid path and where should properties be stored
             input = new FileInputStream("src\\main\\java\\pages\\jira.properties");
 
             prop.load(input);
@@ -39,7 +38,6 @@ public class PropertyReader {
 
             prop.load(input);
 
-
         } catch (IOException ex) {
             ex.printStackTrace();
         } finally {
@@ -51,7 +49,6 @@ public class PropertyReader {
                 }
             }
         }
-
         prop.setProperty(key, value);
     }
 }
