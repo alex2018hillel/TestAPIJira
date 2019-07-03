@@ -1,0 +1,37 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parameterization Test Suite">
+    <!--<groups>-->
+        <!--<dependencies>-->
+            <!--<group name="login" depends-on=""/>-->
+            <!--<group name="smoke" depends-on="login" />-->
+            <!--<group name="regression" depends-on="login" />-->
+            <!--<group name="regression" depends-on="smoke" />-->
+        <!--</dependencies>-->
+    <!--</groups>-->
+    <listeners>
+        <listener class-name="utils.TestListeners"></listener>
+    </listeners>
+    <test name="login">
+        <parameter name="browser" value="chrome"/>
+        <!--<parameter name="browser" value="firefox"/>-->
+        <!--TODO - only 1 param browser-->
+        <parameter name="issueType" value="task"/>
+        <parameter name="issueSummary" value="test issue summary"/>
+        <parameter name="issueDescription" value="test issue description"/>
+        <classes>
+            <!--<class name="pages.Tests">-->
+                <!--<methods>-->
+                    <!--<include name="login"/>-->
+                    <!--<include name="logout"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+            <class name="pages.ChromeExpansionsManagement">
+                <methods>
+                    <include name="installExt"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>
